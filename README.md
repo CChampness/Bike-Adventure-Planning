@@ -17,11 +17,15 @@ So that it will be an enjoyable ride with my preferences.
 * The planner will give current weather conditions for the intended day.
 * The planner will display a map with the proposed route outlined.
 
-# APIs
+## Wireframes
+![demo](./Wireframe_pg1.jpg)
+![demo](./Wireframe_pg2.jpg)
+
+## APIs
 * developers.google.com/maps/documentation/javascript/examples/layer-bicycling
 * openweathermap.org/current
 
-# Rough task breakdown
+## Rough task breakdown
 * Evan 80%
 * Roberto 10%
 * Chris 10%
