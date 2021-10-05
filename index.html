@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Bike Adventure</title>
+    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
-    
+    <div class="search-container">
+        <form>
+            <label for="location"></label>
+            <input type="text" value="location" placeholder="Location">
+        </form>
+    </div>
+    <div class="radius-options">
+        <form>
+            <select name="radius" id="radius">
+                <option value="5miles">5 Miles</option>
+                <option value="10miles">10 Miles</option>
+                <option value="20miles">20 Miles</option>
+                <option value="50miles">50 Miles</option>
+            </select>
+            <button type="submit" id="searchButton"></button>
+        </form>
+    </div>
+    <div class="map"></div>
+    <div class="weather"></div>
 </body>
 </html>
