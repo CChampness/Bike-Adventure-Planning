@@ -1,0 +1,7 @@
+.search-container {
+    border: 1px solid black;
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
