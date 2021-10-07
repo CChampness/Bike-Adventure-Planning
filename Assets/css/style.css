@@ -1,7 +1,16 @@
+html,
+body,
+#map {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
 .search-container {
     border: 1px solid black;
-    height: 300px;
-    width: 400px;
-    padding: 20px;
+    height: 200px;
+    width: 300px;
     flex-wrap: wrap;
+    float: inline-start;
 }

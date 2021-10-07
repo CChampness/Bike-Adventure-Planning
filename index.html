@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- TEST -->
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,14 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    
+
 </head>
 <body>
     
     <div class="search-container">
         <form>
             <label for="location"></label>
-            <input type="text" value="location" placeholder="Location">
+            <input id="location" type="text" value="location" placeholder="Location">
         </form>
         <div class="radius-options">
             <form>
@@ -35,25 +35,10 @@
             <button type="submit" id="searchButton"></button>
         </div>
     </div>
-    <div class="map"></div>
+    <div id="map"></div>
     <div class="weather"></div>
-    
     <script src="https://js.arcgis.com/4.21/"></script>
-    <script>
-        require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
-            sriConfig.apiKey = "AAPKbbdca0354bd14e219ced6d2c9ff0409fm8qAWYWDXxZDafmWRXclQUUtOI03SgBdvMNUUo0tI8GQsXwEsBdGdNuR9edPlFc6";
-            
-            const map = new Map({
-                basemap: "arcgis-topographic" // Basemap layer service
-            });
-            const view = new MapView({
-                map: map,
-                center: [-118.805, 34.027], // Longitude, latitude
-                zoom: 13, // Zoom level
-                container: "viewDiv" // Div element
-            });
-        });
-    </script>
-    
+    <script src="./Assets/js/script.js"></script>
+
 </body>   
 </html>
