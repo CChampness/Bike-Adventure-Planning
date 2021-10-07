@@ -12,5 +12,8 @@ body,
     height: 200px;
     width: 300px;
     flex-wrap: wrap;
-    float: inline-start;
+    float: inline-end;
+    z-index: 9;
+    margin: 20px;
+    padding: 10px;
 }
