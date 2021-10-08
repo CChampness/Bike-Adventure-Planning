@@ -7,9 +7,15 @@ body,
   width: 100%;
 }
 
+#info {
+    padding: 14px;
+    border-radius: 5px;
+    width: 25%;
+  }
+
 .search-container {
     border: 1px solid black;
-    height: 300px;
+    /* height: 300px; */
     width: 400px;
     padding: 20px;
     flex-wrap: wrap;

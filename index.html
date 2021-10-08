@@ -15,13 +15,18 @@
             <input type="text" value="location" placeholder="Location">
         </form>
         <form id="city-form">
-            <label class="form-label">City name</label>
+            <label class="form-label">City name: </label>
             <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
             <button type="submit" class="btn">Get City</button>
           </form>
-  
+          <select name="radius" id="radius">
+            <option value="5miles">5 Miles</option>
+            <option value="10miles">10 Miles</option>
+            <option value="20miles">20 Miles</option>
+            <option value="50miles">50 Miles</option>
+        </select>
     </div>
-    <div class="radius-options">
+    <!-- <div class="radius-options">
         <form>
             <select name="radius" id="radius">
                 <option value="5miles">5 Miles</option>
@@ -31,7 +36,7 @@
             </select>
             <button type="submit" id="searchButton"></button>
         </form>
-    </div>
+    </div> -->
     <div id="map"></div>
     <div class="weather"></div>
     <!-- <div id="viewDiv"></div> -->
