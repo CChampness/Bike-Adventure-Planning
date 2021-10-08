@@ -11,9 +11,29 @@ body,
     border: 1px solid black;
     height: 200px;
     width: 300px;
-    flex-wrap: wrap;
-    float: inline-end;
-    z-index: 9;
+    float: left;
     margin: 20px;
     padding: 10px;
 }
+
+#weather {
+    border: 1px solid black;
+}
+
+.radius-options {
+    padding-top: 10px;
+}
+
+#searchButton {
+    background-color: lightblue;
+    border: 1px darkblue;
+    color: white;
+    padding: 15px 32px;
+    flex-wrap: wrap;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
