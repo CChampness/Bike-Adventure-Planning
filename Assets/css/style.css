@@ -34,8 +34,10 @@ body,
     margin-left: 65px;
 }
 
-#weather {
-    border: 1px solid black;
+.weatherdata{
+    border: solid;
+    background-color:#0077b3 ;
+
 }
 
 .radius-options {
@@ -54,4 +56,6 @@ body,
     display: inline-block;
     border-radius: 2px;
 }
+
+
 
