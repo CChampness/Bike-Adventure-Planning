@@ -33,11 +33,12 @@ function currentweather(data) {
     var div1 = document.getElementById("W1")
     var div2= document.getElementById("W2")
     var div3 = document.getElementById("W3")
+    var map = document.createElement("img")
     iconimage.src= " http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png"
     div1.innerHTML ="current temp: " + data.main.temp
     div2.innerHTML = "max temp: " + data.main.temp_max
     div3.innerHTML=  "min temp: " + data.main.temp_min
-    
+    map.src= "https://tile.openweathermap.org/map/precipitation_new/10/1,058,841/1,058,841.png?appid=913f8a0c9bf081d9e94bfd04b9efd30c"
 }
 
 
