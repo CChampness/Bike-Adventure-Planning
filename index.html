@@ -28,7 +28,7 @@
                     <option value="20miles">20 Miles</option>
                     <option value="50miles">50 Miles</option>
                 </select>
-                <button type="submit" id="searchBotton"></button>
+                <button type="submit" id="searchButton"></button>
             </div>
         </form>
     </div>
@@ -49,8 +49,23 @@
                 zoom: 13, // Zoom level
                 container: "viewDiv" // Div element
             });
-        });
-    </script>
+        });   
+         </script>
+
+         <!-- WEATHER DIVS -->
+    <div class="weatherdata">
+      <h1> Current weather</h1>
+      <img src="scriptweather.js" id="ICON">
+      <p id ="W1"></p> 
+      <p id ="W2"></p>
+      <p id ="W3"></p>
+      <p id ="W4"></p> 
+      <p id ="W5"></p>
+      <p id ="W6"></p> 
+      <p id ="W7"></p>
+      </div>
+
+
     <script src="./scriptweather.js"></script>
 </body>
 
