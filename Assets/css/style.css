@@ -1,7 +1,6 @@
 html,
 body,
 #map {
-<<<<<<< HEAD
     padding: 0;
     margin: 0;
     height: 100%;
@@ -63,7 +62,4 @@ body,
     border: 1px darkblue;
     color: white;
     padding: 15px 32px;
-
-
-
-
+}
