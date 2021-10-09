@@ -1,0 +1,26 @@
+User opens site
+User sees search bar
+User is asked for location, zip code, city or town
+User puts in location and max radius
+User puts in length of ride desired.
+Maybe weather data is displayed?
+
+Map comes up of the area and show trails/bike paths
+User click on a path and have it highlighted?
+Points of interest
+drop down from search bar
+user selects one
+name of route is displayed on left
+difficulty rating
+
+route is highlighted
+map zeros in on route
+
+flow is similar to google maps
+
+MVP
+Looking forward:
+- voice directions
+
+
+we need to look at the api for google bike map

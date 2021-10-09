@@ -4,7 +4,7 @@
 <head>
     
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bike Adventure</title>
     
@@ -25,32 +25,37 @@
                 <label for="location"></label>
                 <input id="location" type="text" value="location" placeholder="Location">
             </form>
-            <div class="radius-options">
-                <form>
+            <form id="city-form">
+                <label class="form-label">City name: </label>
+                <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn">Get City</button>
+              </form>
                     <select name="radius" id="radius">
                         <option value="5miles">5 Miles</option>
                         <option value="10miles">10 Miles</option>
                         <option value="20miles">20 Miles</option>
                         <option value="50miles">50 Miles</option>
                     </select>
-                </form>
-                <button type="submit" id="searchButton"></button>
+                <button type="submit" id="searchButton">SEARCH</button>
             </div>
                     <!-- WEATHER DIVS -->
         <div class="weatherdata">
             <h1> Current weather</h1>
-            <img src="./Assets/js/script.js" id="ICON">
+            <img id="ICON">
             <p id ="W1"></p> 
             <p id ="W2"></p>
             <p id ="W3"></p>
-            <p id ="W4"></p> 
-            <p id ="W5"></p>
-            <p id ="W6"></p> 
-            <p id ="W7"></p>
         </div>
         </div>
 
         <div id="map"></div>
+        <div id="info" class="esri-widget">
+            <h3>Select a feature to display its popup</h3>
+            <h4>
+              Edit the feature by clicking on the "Edit feature" action within the
+              popup.
+            </h4>
+        </div>
     </div>
     
     <script src="https://js.arcgis.com/4.21"></script>
