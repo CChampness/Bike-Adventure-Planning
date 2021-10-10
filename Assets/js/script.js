@@ -1,7 +1,9 @@
 // Default location, comes up the first time the web page is displayed.
 var cityName = "El Paso"; 
-var lon = -106.499;  // -106.48871516310629;
-var lat = 31.7980770813721;
+var defaultLon = -106.499;  // -106.48871516310629;
+var defaultLat = 31.7980770813721;
+var lon = defaultLon;
+var lat = defaultLat;
 var zoomLevel = 13;
 var AppID = "acafba783f22a6fd98819aec5579ae53"
 var cityApi = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -77,8 +79,8 @@ function currentweather(data) {
     div1.innerHTML ="current temp: " + data.main.temp
     div2.innerHTML = "max temp: " + data.main.temp_max
     div3.innerHTML=  "min temp: " + data.main.temp_min
-    lon = data.cood.lon;
-    lat = data.cood.lat;
+    lon = data.coord.lon;
+    lat = data.coord.lat;
 }
 
 function sleep(milliseconds) {
@@ -107,7 +109,7 @@ var getLatLon = async function() {
   await fetch(cityApiQuery)
   .then(function (response) {
     if (!response.ok) {
-        console.log("getLatLon response not ok");
+      console.log("getLatLon response not ok");
       throw response.json();
     }
   
@@ -119,7 +121,6 @@ var getLatLon = async function() {
     // currentweather(res);
   })
   .catch(function (error) {
-    // forecast5dayEl.textContent = "";
     cityNameEl.value = "City name not found. Try City,State,Country"+
                        " Use 2 chars for State and Country";
     console.error(error);
@@ -132,9 +133,10 @@ var formSubmitHandler = function (event) {
   cityName = cityNameEl.value.trim();
   console.log("formSubmitHandler, using: "+cityName);
   if (cityName) {
-    getLatLon(cityName);
-    sleep(2002);
-    location.reload();
+    localStorage.setItem(cityKey, cityName);
+    // getLatLon(cityName);
+    // sleep(2002);
+    setTimeout(location.reload(), 3000);
     cityNameEl.value = '';
   } else {
     cityNameEl.value = "City name not found. Try City,State,Country"+
@@ -148,17 +150,19 @@ if (tmpCityName) {
   cityName = tmpCityName;
   // Bring up weather
   handleEvent(null);
-  lon =  localStorage.getItem(lonKey);
-  lat =  localStorage.getItem(latKey);
+  // lon =  localStorage.getItem(lonKey);
+  // lat =  localStorage.getItem(latKey);
   console.log("start, cityName:"+cityName);
   // getLatLon();
 //   currentweather(needs an arg);
 } else {
-  console.log("Using default lon and lat");
-  console.log("Using cityName:"+cityName);
+  console.log("Using default lon and lat with cityName:"+cityName);
   // document.getElementById("location1").textContent = cityName;
   // Bring up weather
   handleEvent(null);
+  lon = defaultLon;
+  lat = defaultLat;
+  console.log("Using: "+lon+" "+lat);
 }
   
 cityFormEl.addEventListener('submit', formSubmitHandler);
@@ -378,8 +382,8 @@ require([
     editor.viewModel.cancelWorkflow();
   });
 
-  view.ui.add("info", {
-    position: "top-left",
-    index: 1
-  });
+  // view.ui.add("info", {
+  //   position: "top-left",
+  //   index: 1
+  // });
 });
