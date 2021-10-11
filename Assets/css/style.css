@@ -40,15 +40,15 @@ body,
     padding: 10px;
     z-index: 1;
     position: relative;
-    background-color:#0077b3;
+    background-color: #5490b3;
     margin-left: 65px;
-    opacity: .50;
+    /* opacity: .50; */
 }
 
 .weatherdata{
     border: solid;
-    background-color:#0077b3 ;
-    opacity: .50;
+    background-color: #5490b3;
+    /* opacity: .50; */
     z-index: 2;
     float: right;
     position: relative;
