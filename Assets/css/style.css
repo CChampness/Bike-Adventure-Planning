@@ -55,6 +55,11 @@ body,
     margin-right: 65px;
     margin: 20px;
     height: 300px;
+    width: 275px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .radius-options {
