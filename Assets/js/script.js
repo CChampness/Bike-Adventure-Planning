@@ -132,6 +132,27 @@ require([
     className: "esri-icon-edit"
   };
 
+  //Trailheads feature layer (points)
+  const trailheadsLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
+  });
+
+  map.add(trailheadsLayer);
+
+  //Trails feature layer (lines)
+  const trailsLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0"
+  });
+
+  map.add(trailsLayer, 0);
+
+  // Parks and open spaces (polygons)
+  const parksLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
+  });
+
+  map.add(parksLayer, 0);
+
   // Create a popupTemplate for the featurelayer and pass in a function to set its content and specify an action to handle editing the selected feature
   const template = {
     title: "Trail name: {trailName}",
