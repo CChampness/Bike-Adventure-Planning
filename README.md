@@ -26,9 +26,7 @@ So that it will be an enjoyable ride with my preferences.
 * openweathermap.org/current
 
 ## Rough task breakdown
-* Evan 80%
-* Roberto 10%
-* Chris 10%
-* Just kidding, this is tbd, we haven't talked about it yet! ;)
-
+* Evan ArcGIS and styling
+* Roberto Weather API and styling
+* Chris Integrate Weather and Map
 
