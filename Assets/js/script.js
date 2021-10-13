@@ -152,6 +152,42 @@ require([
   });
 
   map.add(parksLayer, 0);
+ 
+  // troll trail
+  const trailsLayer1 = new FeatureLayer({
+    url: "https://services3.arcgis.com/opQwubFkkN0h4iC4/arcgis/rest/services/trollbridge86468/FeatureServer/0"
+  });
+
+  map.add(trailsLayer1, 0);
+
+  // NC trails
+  const trailsLayer3 = new FeatureLayer({
+    url: "https://services3.arcgis.com/opQwubFkkN0h4iC4/arcgis/rest/services/3493/FeatureServer/0"
+  });
+
+  map.add(trailsLayer3, 0);
+
+  const trailsLayer4 = new FeatureLayer({
+    url: "https://services3.arcgis.com/opQwubFkkN0h4iC4/arcgis/rest/services/3296/FeatureServer/0"
+  });
+
+  map.add(trailsLayer4, 0);
+
+  const trailsLayer5 = new FeatureLayer({
+    url: "https://services3.arcgis.com/opQwubFkkN0h4iC4/arcgis/rest/services/3309/FeatureServer/0"
+  });
+
+  map.add(trailsLayer5, 0);
+
+
+
+  // colorado trails
+
+  const trailsLayer2 = new FeatureLayer({
+    url: "https://services3.arcgis.com/opQwubFkkN0h4iC4/arcgis/rest/services/cotrails/FeatureServer/0"
+  });
+
+  map.add(trailsLayer2, 0);
 
   // Create a popupTemplate for the featurelayer and pass in a function to set its content and specify an action to handle editing the selected feature
   const template = {
