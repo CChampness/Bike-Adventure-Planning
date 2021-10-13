@@ -9,8 +9,6 @@ var AppID = "acafba783f22a6fd98819aec5579ae53"
 var cityApi = "https://api.openweathermap.org/data/2.5/weather?q=";
 var cityKey = "cityKey";
 var zoomKey = "zoomKey";
-var lonKey = "lonKey";
-var latKey = "latKey";
 var cityFormEl = document.querySelector('#city-form');
 var cityNameEl = document.querySelector('#cityname');
 var radiusEl = document.querySelector('#radius');
@@ -18,29 +16,23 @@ var searchbutton1 = document.getElementById("searchButton")
 var weatherapi = " "
 var iconpic= " "
 
-// add click event
-
-async function handleEvent(event) {
+async function weatherAndLocation(event) {
   if (event) {
     event.preventDefault();
   }
   weatherapi = "https://api.openweathermap.org/data/2.5/weather/?q=" + cityName + "&units=imperial&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
   console.log(weatherapi)
     
-  // fetch api inside click event
-
   data = await fetch(weatherapi)
   .then(response => response.json())
   .then(data => data)
   console.log(data)
-
   currentweather(data)
 }
 
-$(searchbutton1).click(handleEvent);
-
 function currentweather(data) {
   console.log("data:"+data)
+  document.querySelector(".weatherdata h2").textContent = data.name;
   var iconimage= document.getElementById("ICON")
   var div1 = document.getElementById("W1")
   var div2= document.getElementById("W2")
@@ -49,12 +41,12 @@ function currentweather(data) {
   div1.innerHTML ="current temp: " + data.main.temp
   div2.innerHTML = "max temp: " + data.main.temp_max
   div3.innerHTML=  "min temp: " + data.main.temp_min
+  // Save location for the map
   lon = data.coord.lon;
   lat = data.coord.lat;
 }
 
-function sleep(milliseconds) {
-  console.log("sleeping "+milliseconds);
+function delay(milliseconds) {
   const date = Date.now();
   let currentDate = null;
   do {
@@ -70,8 +62,6 @@ var formSubmitHandler = function (event) {
   console.log("formSubmitHandler, using: "+cityName);
   if (cityName) {
     localStorage.setItem(cityKey, cityName);
-    // getLatLon(cityName);
-    // sleep(2002);
     location.reload();
     cityNameEl.value = '';
   } else {
@@ -94,21 +84,22 @@ var tmpCityName = localStorage.getItem(cityKey);
 if (tmpCityName) {
   cityName = tmpCityName;
   // Bring up weather
-  handleEvent(null);
+  weatherAndLocation(null);
   console.log("start, cityName:"+cityName);
 } else {
   console.log("Using default lon and lat with cityName:"+cityName);
 
   // Bring up weather
-  handleEvent(null);
+  weatherAndLocation(null);
   lon = defaultLon;
   lat = defaultLat;
   console.log("Using: "+lon+" "+lat);
 }
 
 cityFormEl.addEventListener('submit', formSubmitHandler);
-sleep(2001);
+delay(2001);
 
+// Imported code from ArcGIS API
 require([
   "esri/Map",
   "esri/layers/FeatureLayer",
@@ -251,6 +242,7 @@ require([
     }
   }
 
+
   const featureLayer = new FeatureLayer({
     url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/El_Paso_Recreation_AttributeEditsOnly/FeatureServer/1",
     outFields: ["*"],
@@ -380,9 +372,4 @@ require([
     // Cancel the workflow so that once edits are applied, a new popup can be displayed
     editor.viewModel.cancelWorkflow();
   });
-
-  // view.ui.add("info", {
-  //   position: "top-left",
-  //   index: 1
-  // });
 });
