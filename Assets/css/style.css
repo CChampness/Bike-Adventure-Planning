@@ -25,17 +25,23 @@ body,
 .search-container {
     border: 1px solid black;
     height: 100px;
-    flex: wrap;
-    flex-shrink: 2px;
+    /* flex: wrap;
+    flex-shrink: 2px; */
     width: 300px;
     float: left;
-    margin: 20px;
+    margin: auto;
     padding: 10px;
     z-index: 1;
     position: relative;
     background-color: #5490b3;
     margin-left: 65px;
     /* opacity: .50; */
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    margin-top: 10px;
 }
 
 .weatherdata{
@@ -53,6 +59,14 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#temp-text {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 10px;
 }
 
 .radius-options {
