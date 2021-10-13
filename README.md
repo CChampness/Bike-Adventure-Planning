@@ -17,7 +17,7 @@ So that it will be an enjoyable ride with my preferences.
 * The planner will recommend points of interest along the route.
 
 ## Screenshot of the app
-![demo](./screenshot.png)
+![demo](./Screenshot.png)
 
 ## APIs
 * https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0
