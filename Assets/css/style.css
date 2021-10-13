@@ -29,7 +29,7 @@ body,
     flex-shrink: 2px; */
     width: 300px;
     float: left;
-    margin: auto;
+    margin: 20px;
     padding: 10px;
     z-index: 1;
     position: relative;
@@ -45,7 +45,7 @@ body,
 }
 
 .weatherdata{
-    border: solid;
+    border: 1px solid black;
     background-color: #5490b3;
     /* opacity: .50; */
     z-index: 2;
